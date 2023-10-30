@@ -1,0 +1,50 @@
+
+* {
+    background-color: #010232;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    font-weight: 700;
+    padding-top: 30px;
+    font-size: 70px;
+}
+
+.valores {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+input{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.final{
+   display: flex;
+   flex-direction: row;
+   margin: 30px;
+   justify-content: space-between;
+
+      
+}
+
+.resultado, .parcela, .renda {
+    background-color: aliceblue;
+    padding: 20px 90px 20px 90px;
+    margin-top: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    color: aliceblue;
+    margin-left: 50px;
+}
+
