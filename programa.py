@@ -32,4 +32,4 @@ def resultado():
 
 
 #colocando o site para rodar
-app.run()
+app.run(debug=True)
