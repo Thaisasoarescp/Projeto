@@ -14,21 +14,21 @@ def homepage():
 @app.route("/resultado", methods= ['GET'])
 def resultado():
     renda = int(request.args.get("renda"))
-    valor = int(request.args.get("valor"))
+    D = int(request.args.get("valor"))
     t = int(request.args.get("tempo"))
-    i = 1.5097
+    j = 0.07
+    parcela = round((D*(((1+j)**t)*j/(((1+j)**t)-1))), 2)
     if renda < 1320:
         resultado = "Negado"
-        return render_template("resultado.html", resultado = resultado)
+        return render_template("resultado1.html", resultado = resultado)
+    elif (parcela) < (0.20 * renda):
+        resultado = "Aprovado"
+        total = round((t * parcela), 2)
+        juros = round((total - D), 2)
+        return render_template("resultado.html", resultado = resultado, parcela = parcela, total = total, juros = juros)                 
     else:
-        M = valor*(1+i)**t
-        if (M/t*12) < (0.20 * renda):
-            resultado = "Aprovado"
-            return render_template("resultado.html", resultado = resultado)
-        else:
-            resultado = "Negado"
-            return render_template("resultado.html", resultado = resultado)
-   
+         resultado = "Negado"
+         return render_template("resultado1.html", resultado = resultado)
 
 
 #colocando o site para rodar
